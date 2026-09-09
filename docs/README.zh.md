@@ -133,7 +133,7 @@ Definition 是一个 [Microsoft PowerToys Run](https://github.com/microsoft/Powe
 
 ## ✨ 功能特性
 
-- 🔍 **即时释义**：通过 `dictionaryapi.dev` 实时获取释义。
+- 🔍 **即时释义**：通过 `FreeDictionaryAPI.com` 实时获取释义。
 - 🇫🇷 **法语词典（Français）**：通过 Collins 查询法语单词，以 Wiktionnaire 作为后备。
 - 🇮🇹 **意大利语词典（Italiano）**：通过 Wikizionario 查询意大利语单词。
 - 🇺🇦 **乌克兰语词典（Українська）**：使用 Wiktionary https://uk.wiktionary.org 作为主要数据源查询乌克兰语单词。
@@ -225,7 +225,7 @@ Definition 是一个 [Microsoft PowerToys Run](https://github.com/microsoft/Powe
 | 设置 | 默认值 | 说明 |
 |---------|---------|-------------|
 | `Language` | `"en"` | 默认语言（`"en"`、`"fr"`、`"it"`、`"uk"` 或 `"zh"`） |
-| `ApiEndpoint` | `https://api.dictionaryapi.dev/api/v2/entries/en/` | 英语词典 API 端点 |
+| `ApiEndpoint` | `https://freedictionaryapi.com/api/v1/entries/en/` | 英语词典 API 端点 |
 | `LatinLanguages` | `"en,fr,it"` | 以逗号分隔的拉丁字母查询语言（例如 `"en,fr,it"` 表示英语、法语和意大利语） |
 | `UkrainianApiEndpoint` | `https://sum.in.ua/s/` | 乌克兰语词典后备端点（sum.in.ua） |
 | `ChineseApiEndpoint` | `https://www.mdbg.net/chinese/dictionary?...` | 中文词典参考 URL |
@@ -316,7 +316,7 @@ PowerToysRun-Definition/
 
 <details>
 <summary><b>该插件需要联网吗？</b></summary>
-<p>英语、法语、意大利语和乌克兰语查询需要联网（分别为 dictionaryapi.dev、collinsdictionary.com/wiktionary、it.wiktionary.org 和 uk.wiktionary.org）。中文查询使用内置的离线词典，无需联网。所有结果都会缓存在内存中，以便后续查询。</p>
+<p>英语、法语、意大利语和乌克兰语查询需要联网（分别为 FreeDictionaryAPI.com、collinsdictionary.com/wiktionary、it.wiktionary.org 和 uk.wiktionary.org）。中文查询使用内置的离线词典，无需联网。所有结果都会缓存在内存中，以便后续查询。</p>
 </details>
 
 <details>
@@ -343,7 +343,7 @@ PowerToysRun-Definition/
 <summary><b>支持哪些语言？</b></summary>
 <p>开箱即用支持五种语言：</p>
 <ul>
-<li><strong>English</strong> — 通过 <a href="https://dictionaryapi.dev/">dictionaryapi.dev</a>（免费 REST API）</li>
+<li><strong>English</strong> — 通过 <a href="https://freedictionaryapi.com/">FreeDictionaryAPI.com</a>（免费 REST API）</li>
 <li><strong>French（Français）</strong> — 通过 <a href="https://www.collinsdictionary.com/dictionary/french-english/">Collins French-English Dictionary</a>（主要）+ <a href="https://fr.wiktionary.org/">Wiktionnaire</a>（后备）</li>
 <li><strong>Italian（Italiano）</strong> — 通过 <a href="https://it.wiktionary.org/">Wikizionario</a></li>
 <li><strong>Ukrainian（Українська）</strong> — 通过 <a href="https://uk.wiktionary.org/">Wiktionary</a>（主要）+ <a href="https://goroh.pp.ua/">goroh.pp.ua</a>（后备）</li>
@@ -412,7 +412,7 @@ PowerToysRun-Definition/
 
 | 语言 | 数据源 | 方式 | 需要联网 |
 |----------|--------|--------|:-----------------:|
-| **English** | [dictionaryapi.dev](https://dictionaryapi.dev/) | REST API（JSON） | 是 |
+| **English** | [FreeDictionaryAPI.com](https://freedictionaryapi.com/) | REST API（JSON） | 是 |
 | **Français** | [Collins](https://www.collinsdictionary.com/dictionary/french-english/)（主要）+ [Wiktionnaire](https://fr.wiktionary.org/)（后备） | HTML 解析 + MediaWiki API | 是 |
 | **Українська** | [Wiktionary](https://uk.wiktionary.org/)（主要）+ [goroh.pp.ua](https://goroh.pp.ua/)（后备） | API + HTML 抓取 | 是 |
 | **中文** | CC-CEDICT（内置，约 124,000 词条） | 离线数据库 | 否 |
@@ -460,7 +460,7 @@ PowerToysRun-Definition/
 ## 🙏 致谢
 
 - [Microsoft PowerToys](https://github.com/microsoft/PowerToys) 团队提供了出色的启动器
-- [dictionaryapi.dev](https://dictionaryapi.dev/) 提供了免费的英语词典 API
+- [FreeDictionaryAPI.com](https://freedictionaryapi.com/) 提供了免费的英语词典 API
 - [Collins Dictionary](https://www.collinsdictionary.com/dictionary/french-english/) 提供了法英词典内容
 - [Wiktionnaire](https://fr.wiktionary.org/) 提供了法语后备释义
 - [goroh.pp.ua](https://goroh.pp.ua/) 提供了 Горох — українські словники（主要乌克兰语词典数据源）需要 API，请写信给 goroh.pp.ua 的开发者以便将 API 添加到插件中。

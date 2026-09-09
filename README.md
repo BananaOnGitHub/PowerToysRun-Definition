@@ -87,6 +87,7 @@
 - [📄 License](#-license)
 - [🙏 Acknowledgements](#-acknowledgements)
 - [☕ Support](#-support)
+- [🆕 What's New (v1.7.1)](#-whats-new-v171)
 - [🆕 What's New (v1.7.0)](#-whats-new-v170)
 - [🆕 What's New (v1.6.0)](#-whats-new-v160)
 - [🆕 What's New (v1.5.4)](#-whats-new-v154)
@@ -96,6 +97,14 @@
 - [🆕 What's New (v1.3.3)](#-whats-new-v133)
 - [🆕 What's New (v1.3.2)](#-whats-new-v132)
 - [🆕 What's New (v1.3.1)](#-whats-new-v131)
+
+## 🆕 What's New (v1.7.1)
+
+- 🩹 **Restored English definitions** — Replaced the timing-out `dictionaryapi.dev` service with FreeDictionaryAPI.com.
+- 🔄 **Automatic endpoint migration** — Existing installations using the old default endpoint move to the working service automatically; custom endpoints remain untouched.
+- 🛟 **Independent fallback** — If the primary English service fails or times out, Datamuse supplies basic definitions instead of leaving the result list empty.
+- 🧩 **Full response adaptation** — Definitions, nested senses, examples, IPA pronunciations, synonyms, antonyms, source links, and license metadata are translated into the existing PowerToys Run result model.
+- 🧪 **Compatibility coverage** — Tests cover the new response shape, empty results, legacy response compatibility, and endpoint migration.
 
 ## 🆕 What's New (v1.7.0)
 
@@ -165,7 +174,8 @@ Definition is a plugin for [Microsoft PowerToys Run](https://github.com/microsof
 ## ✨ Features
 
 - 💡 **"Did you mean…?" spelling suggestions** — When a word isn't found, the plugin suggests up to 25 similar spellings (Datamuse API, no key needed; optional API key supported if rate limits ever hit). Click a suggestion to search it instantly. [v1.6.0]
-- 🔍 **Instant Definitions**: Get definitions in real-time via `dictionaryapi.dev`.
+- 🔍 **Instant Definitions**: Get definitions in real-time via [FreeDictionaryAPI.com](https://freedictionaryapi.com/).
+- 🛟 **English Definition Fallback**: Uses Datamuse when the primary English service fails or exceeds a 10-second deadline.
 - 🇫🇷 **French Dictionary (Français)**: Lookup French words via Collins with Wiktionnaire fallback.
 - 🇮🇹 **Italian Dictionary (Italiano)**: Lookup Italian words via Wikizionario.
 - 🇺🇦 **Ukrainian Dictionary (Українська)**: Lookup Ukrainian words using Wiktionary https://uk.wiktionary.org as the primary source.
@@ -257,7 +267,7 @@ The plugin supports extensive customization through a `config.json` file that's 
 | Setting | Default | Description |
 |---------|---------|-------------|
 | `Language` | `"en"` | Default language (`"en"`, `"fr"`, `"it"`, `"uk"`, or `"zh"`) |
-| `ApiEndpoint` | `https://api.dictionaryapi.dev/api/v2/entries/en/` | English dictionary API endpoint |
+| `ApiEndpoint` | `https://freedictionaryapi.com/api/v1/entries/en/` | English dictionary API endpoint |
 | `LatinLanguages` | `"en,fr,it"` | Comma-separated Latin-script languages to query (e.g. `"en,fr,it"` for English, French, and Italian) |
 | `UkrainianApiEndpoint` | `https://sum.in.ua/s/` | Ukrainian dictionary fallback endpoint (sum.in.ua) |
 | `ChineseApiEndpoint` | `https://www.mdbg.net/chinese/dictionary?...` | Chinese dictionary reference URL |
@@ -350,7 +360,7 @@ Please make sure to update tests as appropriate.
 
 <details>
 <summary><b>Does the plugin require internet access?</b></summary>
-<p>English, French, Italian, and Ukrainian lookups require internet access (dictionaryapi.dev, collinsdictionary.com/wiktionary, it.wiktionary.org, and uk.wiktionary.org respectively). Chinese lookups use an embedded offline dictionary and work without internet. All results are cached in memory for subsequent lookups.</p>
+<p>English, French, Italian, and Ukrainian lookups require internet access (FreeDictionaryAPI.com, collinsdictionary.com/wiktionary, it.wiktionary.org, and uk.wiktionary.org respectively). Chinese lookups use an embedded offline dictionary and work without internet. All results are cached in memory for subsequent lookups.</p>
 </details>
 
 <details>
@@ -377,7 +387,7 @@ Please make sure to update tests as appropriate.
 <summary><b>Which languages are supported?</b></summary>
 <p>Five languages are supported out of the box:</p>
 <ul>
-<li><strong>English</strong> — via <a href="https://dictionaryapi.dev/">dictionaryapi.dev</a> (free REST API)</li>
+<li><strong>English</strong> — via <a href="https://freedictionaryapi.com/">FreeDictionaryAPI.com</a> (free REST API)</li>
 <li><strong>French (Français)</strong> — via <a href="https://www.collinsdictionary.com/dictionary/french-english/">Collins French-English Dictionary</a> (primary) + <a href="https://fr.wiktionary.org/">Wiktionnaire</a> (fallback)</li>
 <li><strong>Italian (Italiano)</strong> — via <a href="https://it.wiktionary.org/">Wikizionario</a></li>
 <li><strong>Ukrainian (Українська)</strong> — via <a href="https://uk.wiktionary.org/">Wiktionary</a> (primary) + <a href="https://goroh.pp.ua/">goroh.pp.ua</a> (fallback)</li>
@@ -446,7 +456,7 @@ The plugin supports four dictionary sources with automatic script detection:
 
 | Language | Source | Method | Internet Required |
 |----------|--------|--------|:-----------------:|
-| **English** | [dictionaryapi.dev](https://dictionaryapi.dev/) | REST API (JSON) | Yes |
+| **English** | [FreeDictionaryAPI.com](https://freedictionaryapi.com/) | REST API (JSON) | Yes |
 | **Français** | [Collins](https://www.collinsdictionary.com/dictionary/french-english/) (primary) + [Wiktionnaire](https://fr.wiktionary.org/) (fallback) | HTML parsing + MediaWiki API | Yes |
 | **Українська** | [Wiktionary](https://uk.wiktionary.org/) (primary) + [goroh.pp.ua](https://goroh.pp.ua/) (fallback) | API + HTML scraping | Yes |
 | **中文** | CC-CEDICT (embedded, ~124,000 entries) | Offline database | No |
@@ -494,7 +504,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgements
 
 - [Microsoft PowerToys](https://github.com/microsoft/PowerToys) team for the amazing launcher
-- [dictionaryapi.dev](https://dictionaryapi.dev/) for providing the free English dictionary API
+- [FreeDictionaryAPI.com](https://freedictionaryapi.com/) for providing Wiktionary-derived English dictionary data under CC BY-SA 4.0
 - [Collins Dictionary](https://www.collinsdictionary.com/dictionary/french-english/) for French-English dictionary content
 - [Wiktionnaire](https://fr.wiktionary.org/) for French fallback definitions
 - [goroh.pp.ua](https://goroh.pp.ua/) for Горох — українські словники (primary Ukrainian dictionary source) NEED API write to developers of goroh.pp.ua to add API to the plugin. 

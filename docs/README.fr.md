@@ -133,7 +133,7 @@ Definition est un plugin pour [Microsoft PowerToys Run](https://github.com/micro
 
 ## ✨ Fonctionnalités
 
-- 🔍 **Définitions instantanées** : Obtenez des définitions en temps réel via `dictionaryapi.dev`.
+- 🔍 **Définitions instantanées** : Obtenez des définitions en temps réel via `FreeDictionaryAPI.com`.
 - 🇫🇷 **Dictionnaire français (Français)** : Recherchez des mots français via Collins avec repli sur Wiktionnaire.
 - 🇮🇹 **Dictionnaire italien (Italiano)** : Recherchez des mots italiens via Wikizionario.
 - 🇺🇦 **Dictionnaire ukrainien (Українська)** : Recherchez des mots ukrainiens via Wiktionary https://uk.wiktionary.org comme source principale.
@@ -225,7 +225,7 @@ Le plugin prend en charge une personnalisation étendue via un fichier `config.j
 | Paramètre | Défaut | Description |
 |---------|---------|-------------|
 | `Language` | `"en"` | Langue par défaut (`"en"`, `"fr"`, `"it"`, `"uk"` ou `"zh"`) |
-| `ApiEndpoint` | `https://api.dictionaryapi.dev/api/v2/entries/en/` | Endpoint de l'API du dictionnaire anglais |
+| `ApiEndpoint` | `https://freedictionaryapi.com/api/v1/entries/en/` | Endpoint de l'API du dictionnaire anglais |
 | `LatinLanguages` | `"en,fr,it"` | Langues en écriture latine à interroger, séparées par des virgules (par ex. `"en,fr,it"` pour l'anglais, le français et l'italien) |
 | `UkrainianApiEndpoint` | `https://sum.in.ua/s/` | Endpoint de repli du dictionnaire ukrainien (sum.in.ua) |
 | `ChineseApiEndpoint` | `https://www.mdbg.net/chinese/dictionary?...` | URL de référence du dictionnaire chinois |
@@ -316,7 +316,7 @@ N'oubliez pas de mettre à jour les tests le cas échéant.
 
 <details>
 <summary><b>Le plugin nécessite-t-il un accès Internet ?</b></summary>
-<p>Les recherches en anglais, français, italien et ukrainien nécessitent un accès Internet (respectivement dictionaryapi.dev, collinsdictionary.com/wiktionary, it.wiktionary.org et uk.wiktionary.org). Les recherches en chinois utilisent un dictionnaire hors ligne intégré et fonctionnent sans Internet. Tous les résultats sont mis en cache en mémoire pour les recherches ultérieures.</p>
+<p>Les recherches en anglais, français, italien et ukrainien nécessitent un accès Internet (respectivement FreeDictionaryAPI.com, collinsdictionary.com/wiktionary, it.wiktionary.org et uk.wiktionary.org). Les recherches en chinois utilisent un dictionnaire hors ligne intégré et fonctionnent sans Internet. Tous les résultats sont mis en cache en mémoire pour les recherches ultérieures.</p>
 </details>
 
 <details>
@@ -343,7 +343,7 @@ N'oubliez pas de mettre à jour les tests le cas échéant.
 <summary><b>Quelles langues sont prises en charge ?</b></summary>
 <p>Cinq langues sont prises en charge nativement :</p>
 <ul>
-<li><strong>Anglais</strong> — via <a href="https://dictionaryapi.dev/">dictionaryapi.dev</a> (API REST gratuite)</li>
+<li><strong>Anglais</strong> — via <a href="https://freedictionaryapi.com/">FreeDictionaryAPI.com</a> (API REST gratuite)</li>
 <li><strong>Français (Français)</strong> — via <a href="https://www.collinsdictionary.com/dictionary/french-english/">Collins French-English Dictionary</a> (principal) + <a href="https://fr.wiktionary.org/">Wiktionnaire</a> (repli)</li>
 <li><strong>Italien (Italiano)</strong> — via <a href="https://it.wiktionary.org/">Wikizionario</a></li>
 <li><strong>Ukrainien (Українська)</strong> — via <a href="https://uk.wiktionary.org/">Wiktionary</a> (principal) + <a href="https://goroh.pp.ua/">goroh.pp.ua</a> (repli)</li>
@@ -412,7 +412,7 @@ Le plugin prend en charge quatre sources de dictionnaires avec détection automa
 
 | Langue | Source | Méthode | Internet requis |
 |----------|--------|--------|:-----------------:|
-| **Anglais** | [dictionaryapi.dev](https://dictionaryapi.dev/) | API REST (JSON) | Oui |
+| **Anglais** | [FreeDictionaryAPI.com](https://freedictionaryapi.com/) | API REST (JSON) | Oui |
 | **Français** | [Collins](https://www.collinsdictionary.com/dictionary/french-english/) (principal) + [Wiktionnaire](https://fr.wiktionary.org/) (repli) | Analyse HTML + API MediaWiki | Oui |
 | **Українська** | [Wiktionary](https://uk.wiktionary.org/) (principal) + [goroh.pp.ua](https://goroh.pp.ua/) (repli) | API + scraping HTML | Oui |
 | **中文** | CC-CEDICT (intégré, ~124 000 entrées) | Base de données hors ligne | Non |
@@ -460,7 +460,7 @@ Ce projet est sous licence MIT — voir le fichier [LICENSE](../LICENSE) pour pl
 ## 🙏 Remerciements
 
 - L'équipe [Microsoft PowerToys](https://github.com/microsoft/PowerToys) pour le lanceur incroyable
-- [dictionaryapi.dev](https://dictionaryapi.dev/) pour la fourniture de l'API gratuite de dictionnaire anglais
+- [FreeDictionaryAPI.com](https://freedictionaryapi.com/) pour la fourniture de l'API gratuite de dictionnaire anglais
 - [Collins Dictionary](https://www.collinsdictionary.com/dictionary/french-english/) pour le contenu du dictionnaire français-anglais
 - [Wiktionnaire](https://fr.wiktionary.org/) pour les définitions de repli en français
 - [goroh.pp.ua](https://goroh.pp.ua/) pour Горох — українські словники (source principale du dictionnaire ukrainien) BESOIN D'API écrire aux développeurs de goroh.pp.ua pour ajouter l'API au plugin.
