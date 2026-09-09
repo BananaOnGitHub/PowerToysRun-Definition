@@ -48,7 +48,7 @@ namespace Community.PowerToys.Run.Plugin.Definition
             {
                 Timeout = TimeSpan.FromSeconds(ConfigurationManager.Configuration.HttpTimeoutSeconds)
             };
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("PowerToysRun-Definition/1.5.4 (https://github.com/ruslanlap/PowerToysRun-Definition)");
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("PowerToysRun-Definition/1.7.1 (https://github.com/BananaOnGitHub/PowerToysRun-Definition)");
             client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("en-US,en;q=0.9");
             return client;
         });

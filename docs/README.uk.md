@@ -133,7 +133,7 @@ Definition — це плагін для [Microsoft PowerToys Run](https://github
 
 ## ✨ Можливості
 
-- 🔍 **Миттєві визначення**: Отримуйте визначення в реальному часі через `dictionaryapi.dev`.
+- 🔍 **Миттєві визначення**: Отримуйте визначення в реальному часі через `FreeDictionaryAPI.com`.
 - 🇫🇷 **Французький словник (Français)**: Пошук французьких слів через Collins із резервним Wiktionnaire.
 - 🇮🇹 **Італійський словник (Italiano)**: Пошук італійських слів через Wikizionario.
 - 🇺🇦 **Український словник (Українська)**: Пошук українських слів через Wiktionary https://uk.wiktionary.org як основне джерело.
@@ -225,7 +225,7 @@ Definition — це плагін для [Microsoft PowerToys Run](https://github
 | Параметр | За замовчуванням | Опис |
 |---------|---------|-------------|
 | `Language` | `"en"` | Мова за замовчуванням (`"en"`, `"fr"`, `"it"`, `"uk"` або `"zh"`) |
-| `ApiEndpoint` | `https://api.dictionaryapi.dev/api/v2/entries/en/` | Кінцева точка API англійського словника |
+| `ApiEndpoint` | `https://freedictionaryapi.com/api/v1/entries/en/` | Кінцева точка API англійського словника |
 | `LatinLanguages` | `"en,fr,it"` | Мови латинського письма через кому для опитування (наприклад `"en,fr,it"` для англійської, французької та італійської) |
 | `UkrainianApiEndpoint` | `https://sum.in.ua/s/` | Резервна кінцева точка українського словника (sum.in.ua) |
 | `ChineseApiEndpoint` | `https://www.mdbg.net/chinese/dictionary?...` | Довідкова URL-адреса китайського словника |
@@ -316,7 +316,7 @@ PowerToysRun-Definition/
 
 <details>
 <summary><b>Чи потрібен плагіну доступ до інтернету?</b></summary>
-<p>Пошук англійською, французькою, італійською та українською потребує доступу до інтернету (dictionaryapi.dev, collinsdictionary.com/wiktionary, it.wiktionary.org та uk.wiktionary.org відповідно). Пошук китайською використовує вбудований офлайн-словник і працює без інтернету. Усі результати кешуються в пам'яті для подальших запитів.</p>
+<p>Пошук англійською, французькою, італійською та українською потребує доступу до інтернету (FreeDictionaryAPI.com, collinsdictionary.com/wiktionary, it.wiktionary.org та uk.wiktionary.org відповідно). Пошук китайською використовує вбудований офлайн-словник і працює без інтернету. Усі результати кешуються в пам'яті для подальших запитів.</p>
 </details>
 
 <details>
@@ -343,7 +343,7 @@ PowerToysRun-Definition/
 <summary><b>Які мови підтримуються?</b></summary>
 <p>Із коробки підтримуються п'ять мов:</p>
 <ul>
-<li><strong>Англійська</strong> — через <a href="https://dictionaryapi.dev/">dictionaryapi.dev</a> (безкоштовний REST API)</li>
+<li><strong>Англійська</strong> — через <a href="https://freedictionaryapi.com/">FreeDictionaryAPI.com</a> (безкоштовний REST API)</li>
 <li><strong>Французька (Français)</strong> — через <a href="https://www.collinsdictionary.com/dictionary/french-english/">Collins French-English Dictionary</a> (основне) + <a href="https://fr.wiktionary.org/">Wiktionnaire</a> (резервне)</li>
 <li><strong>Італійська (Italiano)</strong> — через <a href="https://it.wiktionary.org/">Wikizionario</a></li>
 <li><strong>Українська (Українська)</strong> — через <a href="https://uk.wiktionary.org/">Wiktionary</a> (основне) + <a href="https://goroh.pp.ua/">goroh.pp.ua</a> (резервне)</li>
@@ -412,7 +412,7 @@ PowerToysRun-Definition/
 
 | Мова | Джерело | Метод | Потрібен інтернет |
 |----------|--------|--------|:-----------------:|
-| **Англійська** | [dictionaryapi.dev](https://dictionaryapi.dev/) | REST API (JSON) | Так |
+| **Англійська** | [FreeDictionaryAPI.com](https://freedictionaryapi.com/) | REST API (JSON) | Так |
 | **Français** | [Collins](https://www.collinsdictionary.com/dictionary/french-english/) (основне) + [Wiktionnaire](https://fr.wiktionary.org/) (резервне) | Парсинг HTML + MediaWiki API | Так |
 | **Українська** | [Wiktionary](https://uk.wiktionary.org/) (основне) + [goroh.pp.ua](https://goroh.pp.ua/) (резервне) | API + HTML-скрейпінг | Так |
 | **中文** | CC-CEDICT (вбудована, ~124 000 записів) | Офлайн-база | Ні |
@@ -460,7 +460,7 @@ PowerToysRun-Definition/
 ## 🙏 Подяки
 
 - Команда [Microsoft PowerToys](https://github.com/microsoft/PowerToys) за дивовижний засіб запуску
-- [dictionaryapi.dev](https://dictionaryapi.dev/) за безкоштовний API англійського словника
+- [FreeDictionaryAPI.com](https://freedictionaryapi.com/) за безкоштовний API англійського словника
 - [Collins Dictionary](https://www.collinsdictionary.com/dictionary/french-english/) за вміст французько-англійського словника
 - [Wiktionnaire](https://fr.wiktionary.org/) за резервні французькі визначення
 - [goroh.pp.ua](https://goroh.pp.ua/) за Горох — українські словники (основне джерело українського словника). ПОТРІБЕН API — напишіть розробникам goroh.pp.ua, щоб додати API до плагіна.

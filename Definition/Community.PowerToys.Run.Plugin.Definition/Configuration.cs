@@ -8,6 +8,9 @@ namespace Community.PowerToys.Run.Plugin.Definition
 {
     internal class PluginConfiguration
     {
+        internal const string DefaultEnglishApiEndpoint = "https://freedictionaryapi.com/api/v1/entries/en/";
+        internal const string LegacyEnglishApiEndpoint = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+
         public int CacheMaxSize { get; set; } = 100;
         public int HttpTimeoutSeconds { get; set; } = 30;
         public int CacheExpirationMinutes { get; set; } = 30;
@@ -15,7 +18,7 @@ namespace Community.PowerToys.Run.Plugin.Definition
         public bool EnableClipboardOperations { get; set; } = true;
         public int TextTruncateLength { get; set; } = 30;
         public bool EnableVerboseLogging { get; set; } = false;
-        public string ApiEndpoint { get; set; } = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+        public string ApiEndpoint { get; set; } = DefaultEnglishApiEndpoint;
         public int MaxResultsPerMeaning { get; set; } = 3;
         public bool ShowExamplesInResults { get; set; } = true;
         public bool ShowSynonymsInResults { get; set; } = true;
@@ -96,11 +99,27 @@ namespace Community.PowerToys.Run.Plugin.Definition
         {
             _configuration ??= new PluginConfiguration();
 
+            _configuration.ApiEndpoint = NormalizeEnglishApiEndpoint(_configuration.ApiEndpoint);
+
             if (string.IsNullOrWhiteSpace(_configuration.LatinLanguages)
                 || string.Equals(_configuration.LatinLanguages.Trim(), "en", StringComparison.OrdinalIgnoreCase))
             {
                 _configuration.LatinLanguages = "en,fr,it";
             }
+        }
+
+        internal static string NormalizeEnglishApiEndpoint(string endpoint)
+        {
+            if (string.IsNullOrWhiteSpace(endpoint)
+                || string.Equals(
+                    endpoint.Trim().TrimEnd('/'),
+                    PluginConfiguration.LegacyEnglishApiEndpoint.TrimEnd('/'),
+                    StringComparison.OrdinalIgnoreCase))
+            {
+                return PluginConfiguration.DefaultEnglishApiEndpoint;
+            }
+
+            return endpoint.Trim();
         }
 
         public static void ReloadConfiguration()

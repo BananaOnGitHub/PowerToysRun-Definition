@@ -133,7 +133,7 @@ Definition è un plugin per [Microsoft PowerToys Run](https://github.com/microso
 
 ## ✨ Funzionalità
 
-- 🔍 **Definizioni Istantanee**: Ottieni definizioni in tempo reale tramite `dictionaryapi.dev`.
+- 🔍 **Definizioni Istantanee**: Ottieni definizioni in tempo reale tramite `FreeDictionaryAPI.com`.
 - 🇫🇷 **Dizionario Francese (Français)**: Cerca parole francesi tramite Collins con fallback su Wiktionnaire.
 - 🇮🇹 **Dizionario Italiano (Italiano)**: Cerca parole italiane tramite Wikizionario.
 - 🇺🇦 **Dizionario Ucraino (Українська)**: Cerca parole ucraine usando Wiktionary https://uk.wiktionary.org come fonte principale.
@@ -225,7 +225,7 @@ Il plugin supporta un'ampia personalizzazione tramite un file `config.json` che 
 | Impostazione | Predefinito | Descrizione |
 |---------|---------|-------------|
 | `Language` | `"en"` | Lingua predefinita (`"en"`, `"fr"`, `"it"`, `"uk"` o `"zh"`) |
-| `ApiEndpoint` | `https://api.dictionaryapi.dev/api/v2/entries/en/` | Endpoint API del dizionario inglese |
+| `ApiEndpoint` | `https://freedictionaryapi.com/api/v1/entries/en/` | Endpoint API del dizionario inglese |
 | `LatinLanguages` | `"en,fr,it"` | Lingue in alfabeto latino da interrogare, separate da virgole (ad es. `"en,fr,it"` per Inglese, Francese e Italiano) |
 | `UkrainianApiEndpoint` | `https://sum.in.ua/s/` | Endpoint di fallback del dizionario ucraino (sum.in.ua) |
 | `ChineseApiEndpoint` | `https://www.mdbg.net/chinese/dictionary?...` | URL di riferimento del dizionario cinese |
@@ -316,7 +316,7 @@ Assicurati di aggiornare i test in modo appropriato.
 
 <details>
 <summary><b>Il plugin richiede l'accesso a internet?</b></summary>
-<p>Le ricerche in Inglese, Francese, Italiano e Ucraino richiedono l'accesso a internet (rispettivamente dictionaryapi.dev, collinsdictionary.com/wiktionary, it.wiktionary.org e uk.wiktionary.org). Le ricerche in Cinese utilizzano un dizionario offline integrato e funzionano senza internet. Tutti i risultati vengono memorizzati nella cache in memoria per le ricerche successive.</p>
+<p>Le ricerche in Inglese, Francese, Italiano e Ucraino richiedono l'accesso a internet (rispettivamente FreeDictionaryAPI.com, collinsdictionary.com/wiktionary, it.wiktionary.org e uk.wiktionary.org). Le ricerche in Cinese utilizzano un dizionario offline integrato e funzionano senza internet. Tutti i risultati vengono memorizzati nella cache in memoria per le ricerche successive.</p>
 </details>
 
 <details>
@@ -343,7 +343,7 @@ Assicurati di aggiornare i test in modo appropriato.
 <summary><b>Quali lingue sono supportate?</b></summary>
 <p>Cinque lingue sono supportate già pronte all'uso:</p>
 <ul>
-<li><strong>Inglese</strong> — tramite <a href="https://dictionaryapi.dev/">dictionaryapi.dev</a> (API REST gratuita)</li>
+<li><strong>Inglese</strong> — tramite <a href="https://freedictionaryapi.com/">FreeDictionaryAPI.com</a> (API REST gratuita)</li>
 <li><strong>Francese (Français)</strong> — tramite <a href="https://www.collinsdictionary.com/dictionary/french-english/">Dizionario Collins Francese-Inglese</a> (principale) + <a href="https://fr.wiktionary.org/">Wiktionnaire</a> (fallback)</li>
 <li><strong>Italiano (Italiano)</strong> — tramite <a href="https://it.wiktionary.org/">Wikizionario</a></li>
 <li><strong>Ucraino (Українська)</strong> — tramite <a href="https://uk.wiktionary.org/">Wiktionary</a> (principale) + <a href="https://goroh.pp.ua/">goroh.pp.ua</a> (fallback)</li>
@@ -412,7 +412,7 @@ Il plugin supporta quattro fonti di dizionari con rilevamento automatico dell'al
 
 | Lingua | Fonte | Metodo | Internet Richiesto |
 |----------|--------|--------|:-----------------:|
-| **Inglese** | [dictionaryapi.dev](https://dictionaryapi.dev/) | API REST (JSON) | Sì |
+| **Inglese** | [FreeDictionaryAPI.com](https://freedictionaryapi.com/) | API REST (JSON) | Sì |
 | **Français** | [Collins](https://www.collinsdictionary.com/dictionary/french-english/) (principale) + [Wiktionnaire](https://fr.wiktionary.org/) (fallback) | Analisi HTML + API MediaWiki | Sì |
 | **Українська** | [Wiktionary](https://uk.wiktionary.org/) (principale) + [goroh.pp.ua](https://goroh.pp.ua/) (fallback) | API + scraping HTML | Sì |
 | **中文** | CC-CEDICT (integrato, ~124.000 voci) | Database offline | No |
@@ -460,7 +460,7 @@ Questo progetto è distribuito con licenza MIT - vedi il file [LICENSE](LICENSE)
 ## 🙏 Ringraziamenti
 
 - Il team di [Microsoft PowerToys](https://github.com/microsoft/PowerToys) per l'incredibile launcher
-- [dictionaryapi.dev](https://dictionaryapi.dev/) per aver fornito l'API gratuita del dizionario inglese
+- [FreeDictionaryAPI.com](https://freedictionaryapi.com/) per aver fornito l'API gratuita del dizionario inglese
 - [Dizionario Collins](https://www.collinsdictionary.com/dictionary/french-english/) per i contenuti del dizionario Francese-Inglese
 - [Wiktionnaire](https://fr.wiktionary.org/) per le definizioni francesi di fallback
 - [goroh.pp.ua](https://goroh.pp.ua/) per Горох — українські словники (fonte principale del dizionario ucraino) NECESSARIA API: scrivere agli sviluppatori di goroh.pp.ua per aggiungere l'API al plugin. 
