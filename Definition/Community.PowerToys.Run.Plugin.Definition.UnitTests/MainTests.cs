@@ -28,9 +28,13 @@ namespace Community.PowerToys.Run.Plugin.Definition.UnitTests
         [TestMethod]
         public void LoadContextMenus_should_return_results()
         {
-            var results = main.LoadContextMenus(new Result { ContextData = "search" });
+            var results = main.LoadContextMenus(new Result
+            {
+                Title = "search",
+                ContextData = new ResultContext { TextToCopy = "search" }
+            });
 
-            Assert.IsNotNull(results.First());
+            Assert.IsTrue(results.Any());
         }
 
         [TestMethod]

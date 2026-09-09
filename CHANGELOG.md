@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented in this file.
 
+## [Unreleased]
+
+### Fixed
+
+- Restore English lookups by moving the default endpoint from the timing-out dictionaryapi.dev service to FreeDictionaryAPI.com.
+- Fall back to Datamuse definitions when the primary English service fails or exceeds a 10-second deadline.
+- Automatically migrate existing installations that still contain the old default endpoint.
+- Translate the new API response into the plugin's existing definitions, pronunciations, examples, synonyms, antonyms, source links, and licensing model.
+- Preserve compatibility with custom endpoints that return the legacy response shape.
+
 ## [1.7.0](https://github.com/ruslanlap/PowerToysRun-Definition/compare/v1.6.0...v1.7.0) (2026-08-17)
 
 
